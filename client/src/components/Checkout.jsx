@@ -1,10 +1,19 @@
 import React from 'react';
-import {CardElement, StripeProvider, Elements, injectStripe} from 'react-stripe-elements';
+import {
+  CardElement,
+  PaymentRequestButtonElement,
+  StripeProvider,
+  Elements,
+  injectStripe
+} from 'react-stripe-elements';
 
 class _CardForm extends React.Component {
+
   render() {
     return (
-      <form onSubmit={() => this.props.stripe.createToken().then(payload => console.log(payload))}>
+      <form onSubmit={() => this.props.stripe
+        .createToken()
+        .then(payload => console.log(payload))}>
         <CardElement />
         <button className="payBtn">Pay</button>
       </form>
